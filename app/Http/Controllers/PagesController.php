@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
+use App\Brand;
 
 class PagesController extends Controller
 {
@@ -14,6 +15,7 @@ class PagesController extends Controller
     public function shop()
     {
     	$categories = Category::all();
-    	return view('pages.shop', compact('categories'));
+    	$brands = Brand::all();
+    	return view('pages.shop', compact('categories', 'brands'));
     }
 }
